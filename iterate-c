@@ -1,0 +1,31 @@
+#!/bin/bash
+./take_samples $1 0.000244140625
+./take_samples $1 0.00048828125
+./take_samples $1 0.0009765625
+./take_samples $1 0.001953125
+./take_samples $1 0.00390625
+echo "first five down!"
+./take_samples $1 0.0078125
+./take_samples $1 0.015625
+./take_samples $1 0.03125
+./take_samples $1 0.0625
+./take_samples $1 0.125
+echo "next five down"
+./take_samples $1 0.25
+./take_samples $1 0.5
+./take_samples $1 1
+./take_samples $1 2
+./take_samples $1 4
+echo "middle five down!"
+./take_samples $1 8
+./take_samples $1 16
+./take_samples $1 32
+./take_samples $1 64
+./take_samples $1 128
+echo "nearly there now!"
+./take_samples $1 256
+./take_samples $1 512
+./take_samples $1 1024
+./take_samples $1 2048
+./take_samples $1 4096
+echo "all the way done"

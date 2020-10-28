@@ -1,0 +1,17 @@
+#!/bin/bash
+for i in {1..20}
+do
+    libsvm-3.24/svm-train -s 0 -t 1 -v 10 -d $1 -c $2 train.scale > out1
+    sed -n '$p' out1 > out2
+    sed 's/^.*Cross\ Validation\ Accuracy = \(.*\)%/\1/' out2 > out3
+    cat out3 >> out4
+    echo "finished round $i..."
+done
+echo "done!"
+tr '\n' ',' < out4 > out5
+rm out4
+sed 's/,$//' out5 >> compiled_accuracies
+rm out1; rm out2; rm out3; rm out5
+
+
+
